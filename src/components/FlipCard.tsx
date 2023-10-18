@@ -1,6 +1,6 @@
 // import { useState } from 'react';
-import BackSideImage from '../../public/images/BackSidePokemon.jpg'
-import CheckImage from '../../public/images/pokemon.png'
+import BackSideImage from '../assets/images/BackSidePokemon.jpg'
+import CheckImage from '../assets/images/pokemon.png'
 import { useAppContext } from '../context/AppContext';
 
 interface FlipCardProps {
@@ -29,14 +29,12 @@ const FlipCard = ({
     return
   }
 
-  const image = `../../public/images/${frontImage}`
 
   return (
-
     <div className={`flip-card ${flipped ? 'flipped' : ''}`} >
       <div className="flip-card-inner">
         <div className="flip-card-front">
-          <img className="img-card" src={image} alt="" />
+          <img className="img-card" src={`${frontImage}`} alt={frontImage} />
         </div>
         <div onClick={() => flipCardClick()} className="flip-card-back">
           {
