@@ -17,7 +17,7 @@ const FlipCard = ({
 }: FlipCardProps) => {
 
 
-  const imageURL = import.meta.env.BASE_URL.concat('public/images')
+  const imageURL = import.meta.env.BASE_URL.concat('images')
 
   const { numberFlipped } = useAppContext()
 
