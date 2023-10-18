@@ -1,0 +1,47 @@
+[
+  {
+    "id": "001",
+    "name": "arceus",
+    "image": "arceus.jpg"
+  },
+  {
+    "id": "002",
+    "name": "bubasaur",
+    "image": "bubasaur.jpg"
+  },
+  {
+    "id": "003",
+    "name": "butterfree",
+    "image": "butterfree.jpg"
+  },
+  {
+    "id": "004",
+    "name": "charmander",
+    "image": "charmander.jpg"
+  },
+  {
+    "id": "005",
+    "name": "gengar",
+    "image": "gengar.jpg"
+  },
+  {
+    "id": "006",
+    "name": "pikachu",
+    "image": "pikachu.jpg"
+  },
+  {
+    "id": "007",
+    "name": "squirtle",
+    "image": "squirtle.jpg"
+  },
+  {
+    "id": "008",
+    "name": "tentacruel",
+    "image": "tentacruel.jpg"
+  },
+  {
+    "id": "009",
+    "name": "mewtwo",
+    "image": "mewtwo.jpg"
+  }
+]
