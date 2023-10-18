@@ -1,6 +1,3 @@
-// import { useState } from 'react';
-// import BackSideImage from 'BackSidePokemon.jpg'
-// import CheckImage from 'pokemon.png'
 import { useAppContext } from '../context/AppContext';
 
 interface FlipCardProps {
@@ -19,6 +16,9 @@ const FlipCard = ({
   checked 
 }: FlipCardProps) => {
 
+
+  const imageURL = import.meta.env.BASE_URL.concat('images')
+
   const { numberFlipped } = useAppContext()
 
 
@@ -29,16 +29,15 @@ const FlipCard = ({
     return
   }
 
-
   return (
     <div className={`flip-card ${flipped ? 'flipped' : ''}`} >
       <div className="flip-card-inner">
         <div className="flip-card-front">
-          <img className="img-card" src={`${frontImage}`} alt={frontImage}/>
+          <img className="img-card" src={`${imageURL}/${frontImage}`} alt={frontImage}/>
         </div>
         <div onClick={() => flipCardClick()} className="flip-card-back">
           {
-            checked ? <img className="img-card" src={'pokemon.png'} alt="" /> : <img className="img-card" src={'BackSidePokemon.jpg'} alt="" />
+            checked ? <img className="img-card" src={`${imageURL}/pokemon.png`} alt="" /> : <img className="img-card" src={`${imageURL}/BackSidePokemon.jpg`} alt="" />
           }
         </div>
       </div>

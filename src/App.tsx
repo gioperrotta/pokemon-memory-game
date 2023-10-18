@@ -51,7 +51,6 @@ function App() {
 
   function restartOrigin() {
     const prevCards = cards
-    console.log('prevCards => ', prevCards)
     for (let i = 0; i < prevCards.length; i++) {
       prevCards[i]!.flipped = true  
       setCards(prevCards) 
