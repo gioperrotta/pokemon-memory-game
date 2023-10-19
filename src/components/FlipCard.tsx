@@ -18,6 +18,10 @@ const FlipCard = ({
 
 
   const imageURL = import.meta.env.VITE_APP_BASE_URL.concat('images')
+  console.log('imageURL => ', imageURL)
+  // const imageURL = process.env.VITE_APP_BASE_URL.concat('images')
+
+
 
   const { numberFlipped } = useAppContext()
 
