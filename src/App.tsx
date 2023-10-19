@@ -14,6 +14,7 @@ interface CardProps {
 
 function App() {
   const [indexSelected, setIndexSelected] = useState(-1)
+  const baseURL = import.meta.env.VITE_APP_BASE_URL.concat('/db/cards.json')
 
   const {
     cards, setCards,
@@ -22,7 +23,7 @@ function App() {
 
   const getCards = async () => {
     try {
-      let response = await fetch('../src/db/cards.json');
+      let response = await fetch(baseURL);
       const data01: CardProps[] = await response.json();
       for (let i = 0; i < data01.length; i++) {
         data01[i].flipped = true
@@ -30,7 +31,7 @@ function App() {
         data01[i].id = (Math.floor(Math.random() * (256 - 1 + 1)) + 1).toString()
       }
 
-      response = await fetch('../src/db/cards.json');
+      response = await fetch(baseURL);
       const data02: CardProps[] = await response.json();
       for (let i = 0; i < data02.length; i++) {
         data02[i].flipped = true
