@@ -14,7 +14,8 @@ interface CardProps {
 
 function App() {
   const [indexSelected, setIndexSelected] = useState(-1)
-  const baseURL = import.meta.env.VITE_APP_BASE_URL.concat('/db/cards.json')
+  const baseURL = import.meta.env.BASE_URL.concat('db/cards.json')
+  console.log('baseURL => ',baseURL)
 
   const {
     cards, setCards,
@@ -53,9 +54,9 @@ function App() {
   function restartOrigin() {
     const prevCards = cards
     for (let i = 0; i < prevCards.length; i++) {
-      prevCards[i]!.flipped = true  
-      setCards(prevCards) 
-    }   
+      prevCards[i]!.flipped = true
+      setCards(prevCards)
+    }
     setNumberFlipped(0)
     setIndexSelected(-1)
   }
@@ -73,22 +74,23 @@ function App() {
     } else {
       if (prevCards[indexSelected]?.image === prevCards[index]?.image) {
         prevCards[indexSelected]!.checked = true
-        prevCards[index]!.checked = true 
+        prevCards[index]!.checked = true
       }
     }
 
     setCards(prevCards)
 
-   if (numberFlipped === 1)
-    setTimeout(() => {
-          restartOrigin()
-    }, 1000);
+    if (numberFlipped === 1)
+      setTimeout(() => {
+        restartOrigin()
+      }, 1000);
 
   }
 
   useEffect(() => {
     getCards()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -98,8 +100,8 @@ function App() {
           <FlipCard
             key={index}
             index={index}
-            flipped= {card!.flipped}
-            handeleClick={()=>handleClickCard(index)}
+            flipped={card!.flipped}
+            handeleClick={() => handleClickCard(index)}
             frontImage={card!.image}
             checked={card!.checked}
           />
