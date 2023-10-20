@@ -15,7 +15,6 @@ interface CardProps {
 function App() {
   const [indexSelected, setIndexSelected] = useState(-1)
   const baseURL = import.meta.env.BASE_URL.concat('db/cards.json')
-  console.log('baseURL => ',baseURL)
 
   const {
     cards, setCards,
